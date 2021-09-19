@@ -1,8 +1,12 @@
 import 'dart:convert';
+import 'package:get/get.dart';
 import 'package:movie_app/Models/movieModel.dart';
 import 'package:http/http.dart' as http;
+import 'package:movie_app/Pages/home_page.dart';
 
 class ApiCall {
+  final homePage = Get.put(HomePage());
+
   int count = 10;
 
   bool loader = false;
@@ -12,11 +16,6 @@ class ApiCall {
   Future<List<MovieModel>> getMovieData() async {
     var response = await http.get(url);
 
-
-    loader=true;
-
     return MovieModel.fromJsonList(json.decode(response.body));
   }
-
-
 }
