@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
+import 'package:movie_app/Pages/detail_page.dart';
 import 'package:movie_app/Repository/apiCall.dart';
 
 class HomePage extends StatefulWidget {
@@ -52,7 +53,22 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    showModalBottomSheet(
+                                        isScrollControlled:
+                                        true,
+                                        context: context,
+                                        builder: (builder) {
+                                          return DetailPage(
+                                            image: "",
+                                            fullTitle: "",
+                                            rank: "",
+                                            rating: "",
+                                            crew: "",
+                                            imDbRatingCount: "",
+                                          );
+                                        });
+                                  },
                                   child: Container(
                                     decoration: BoxDecoration(
                                         color: Colors.blueGrey,

@@ -3,19 +3,18 @@ import 'package:get/get.dart';
 
 class DetailPage extends StatefulWidget {
   var image;
-  var fullTitle;
-  var rank;
+  var title;
   var rating;
-  var crew;
-  var imDbRatingCount;
+  var year;
+  var desciption;
 
-  DetailPage(
-      {this.image,
-        this.fullTitle,
-        this.rank,
-        this.rating,
-        this.crew,
-        this.imDbRatingCount});
+  DetailPage({
+    this.image,
+    this.title,
+    this.rating,
+    this.year,
+    this.desciption,
+  });
 
   @override
   _DetailPageState createState() => _DetailPageState();
@@ -25,7 +24,7 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: Get.height/1.3,
+        height: Get.height / 1.3,
         width: Get.width,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -41,9 +40,9 @@ class _DetailPageState extends State<DetailPage> {
             children: [
               Container(
                   child: Padding(
-                    padding: const EdgeInsets.all(40.0),
-                    child: Image.network(widget.image),
-                  )),
+                padding: const EdgeInsets.all(40.0),
+                child: Image.network(widget.image),
+              )),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0),
                 child: Column(
@@ -55,19 +54,7 @@ class _DetailPageState extends State<DetailPage> {
                           "Title: ",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        Text(widget.fullTitle),
-                      ],
-                    ),
-                    SizedBox(
-                      height: Get.height / 25,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "Rank: ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text(widget.rank),
+                        Text(widget.title),
                       ],
                     ),
                     SizedBox(
@@ -88,24 +75,16 @@ class _DetailPageState extends State<DetailPage> {
                     Row(
                       children: [
                         Text(
-                          "Crew: ",
+                          "Description: ",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         Container(
-                            width: Get.width / 1.3, child: Text(widget.crew)),
+                            width: Get.width / 1.3,
+                            child: Text(widget.desciption)),
                       ],
                     ),
                     SizedBox(
                       height: Get.height / 25,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "Rating Count: ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text(widget.imDbRatingCount),
-                      ],
                     ),
                     SizedBox(
                       height: Get.height / 25,
