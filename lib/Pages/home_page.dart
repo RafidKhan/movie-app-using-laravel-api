@@ -113,8 +113,7 @@ class _HomePageState extends State<HomePage> {
                                                         error, stackTrace) {
                                                       return Center(
                                                           child: Image.asset(
-                                                              'assets/error.jpg')
-                                                      );
+                                                              'assets/error.jpg'));
                                                     },
                                                   ),
                                                 ),
@@ -142,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                                                       Container(
                                                         width: Get.width / 1.2,
                                                         child: Text(
-                                                          "Movie Name: " +
+                                                          "Title: " +
                                                               snapshot.data[i]
                                                                   .title,
                                                           style: TextStyle(
