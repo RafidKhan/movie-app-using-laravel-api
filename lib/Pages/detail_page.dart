@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 
 class DetailPage extends StatefulWidget {
@@ -57,9 +58,11 @@ class _DetailPageState extends State<DetailPage> {
                       children: [
                         Text(
                           "Title: ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize:
+                          Get.width / 15,fontWeight: FontWeight.bold),
                         ),
-                        Text(widget.title),
+                        Text(widget.title, style: TextStyle(fontSize:
+                        Get.width / 15,),),
                       ],
                     ),
                     SizedBox(
@@ -69,24 +72,57 @@ class _DetailPageState extends State<DetailPage> {
                       children: [
                         Text(
                           "Rating: ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize:
+                          Get.width / 15,fontWeight: FontWeight.bold),
                         ),
-                        Text(widget.rating.toString()),
+                        Text(widget.rating.toString(),style: TextStyle(fontSize:
+                        Get.width / 15,),),
                       ],
                     ),
                     SizedBox(
                       height: Get.height / 25,
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          "Description: ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                    Container(
+                      child: Center(
+                        child: RatingBar.builder(
+                          unratedColor:
+                          Colors.grey,
+                          itemSize:
+                          Get.width / 17,
+                          initialRating:
+                          double.parse(widget.rating),
+                          minRating: 1,
+                          allowHalfRating: true,
+                          direction:
+                          Axis.horizontal,
+                          itemCount: 10,
+                          itemPadding: EdgeInsets
+                              .symmetric(
+                              horizontal:
+                              4.0),
+                          itemBuilder:
+                              (context, _) =>
+                              Icon(
+                                Icons.star,
+                                color: Colors.amber,
+                              ),
+                          onRatingUpdate:
+                              (rating) {
+                            print(rating);
+                          },
                         ),
-                        Container(
-                            width: Get.width / 1.3,
-                            child: Text(widget.desciption)),
-                      ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: Get.height / 25,
+                    ),
+                    Container(
+                      width: Get.width,
+                      child: Text(
+                        "Description: "+widget.desciption,
+                        style: TextStyle(fontSize:
+                        Get.width / 15,fontWeight: FontWeight.bold),
+                      ),
                     ),
                     SizedBox(
                       height: Get.height / 25,
