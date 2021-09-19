@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_app/Pages/home_page.dart';
-import 'package:movie_app/Pages/splash_page.dart';
 import 'package:movie_app/Repository/appRoutes.dart';
 
 void main() {
