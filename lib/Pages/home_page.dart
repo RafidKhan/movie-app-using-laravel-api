@@ -75,20 +75,24 @@ class _HomePageState extends State<HomePage> {
                                             children: [
                                               GestureDetector(
                                                 onTap: () {
-                                                  // showModalBottomSheet(
-                                                  //     isScrollControlled:
-                                                  //     true,
-                                                  //     context: context,
-                                                  //     builder: (builder) {
-                                                  //       return DetailPage(
-                                                  //         image: snapshot.data!.items[index].image,
-                                                  //         fullTitle: snapshot.data!.items[index].fullTitle,
-                                                  //         rank: snapshot.data!.items[index].rank,
-                                                  //         rating: snapshot.data!.items[index].imDbRating,
-                                                  //         crew: snapshot.data!.items[index].crew,
-                                                  //         imDbRatingCount: snapshot.data!.items[index].imDbRatingCount,
-                                                  //       );
-                                                  //     });
+                                                  showModalBottomSheet(
+                                                      isScrollControlled: true,
+                                                      context: context,
+                                                      builder: (builder) {
+                                                        return DetailPage(
+                                                          image: snapshot
+                                                              .data[i].image,
+                                                          title: snapshot
+                                                              .data[i].title,
+                                                          year: snapshot
+                                                              .data[i].year,
+                                                          rating: snapshot
+                                                              .data[i].rating,
+                                                          desciption: snapshot
+                                                              .data[i]
+                                                              .description,
+                                                        );
+                                                      });
                                                 },
                                                 child: Container(
                                                   decoration: BoxDecoration(
@@ -108,8 +112,9 @@ class _HomePageState extends State<HomePage> {
                                                     errorBuilder: (context,
                                                         error, stackTrace) {
                                                       return Center(
-                                                          child:
-                                                              CircularProgressIndicator());
+                                                          child: Image.asset(
+                                                              'assets/error.jpg')
+                                                      );
                                                     },
                                                   ),
                                                 ),
@@ -141,7 +146,8 @@ class _HomePageState extends State<HomePage> {
                                                               snapshot.data[i]
                                                                   .title,
                                                           style: TextStyle(
-                                                            fontSize: Get.width/15,
+                                                            fontSize:
+                                                                Get.width / 15,
                                                             color: Colors.black,
                                                           ),
                                                         ),
@@ -156,7 +162,9 @@ class _HomePageState extends State<HomePage> {
                                                                 snapshot.data[i]
                                                                     .year,
                                                             style: TextStyle(
-                                                                fontSize: Get.width/15,
+                                                                fontSize:
+                                                                    Get.width /
+                                                                        15,
                                                                 color: Colors
                                                                     .black)),
                                                       ),
@@ -170,7 +178,9 @@ class _HomePageState extends State<HomePage> {
                                                               snapshot.data[i]
                                                                   .rating,
                                                           style: TextStyle(
-                                                              fontSize: Get.width/15,
+                                                              fontSize:
+                                                                  Get.width /
+                                                                      15,
                                                               color:
                                                                   Colors.black),
                                                         ),

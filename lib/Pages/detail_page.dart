@@ -41,7 +41,12 @@ class _DetailPageState extends State<DetailPage> {
               Container(
                   child: Padding(
                 padding: const EdgeInsets.all(40.0),
-                child: Image.network(widget.image),
+                child: Image.network(
+                  widget.image,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Center(child: Image.asset('assets/error.jpg'));
+                  },
+                ),
               )),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0),
