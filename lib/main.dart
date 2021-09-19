@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return GetMaterialApp(
       title: "Top Movie List",
       debugShowCheckedModeBanner: false,
