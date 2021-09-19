@@ -7,6 +7,8 @@ import 'package:movie_app/Pages/home_page.dart';
 class ApiCall {
   final homePage = Get.put(HomePage());
 
+  List title;
+
   int count = 10;
 
   bool loader = false;
@@ -16,6 +18,7 @@ class ApiCall {
   Future<List<MovieModel>> getMovieData() async {
     var response = await http.get(url);
 
+    print(response.statusCode);
     return MovieModel.fromJsonList(json.decode(response.body));
   }
 }
