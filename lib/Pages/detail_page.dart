@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DetailPage extends StatefulWidget {
-  const DetailPage({Key key}) : super(key: key);
+  var image;
+  var fullTitle;
+  var rank;
+  var rating;
+  var crew;
+  var imDbRatingCount;
+
+  DetailPage(
+      {this.image,
+        this.fullTitle,
+        this.rank,
+        this.rating,
+        this.crew,
+        this.imDbRatingCount});
 
   @override
   _DetailPageState createState() => _DetailPageState();
@@ -10,6 +24,97 @@ class DetailPage extends StatefulWidget {
 class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+        height: Get.height/1.3,
+        width: Get.width,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            gradient: LinearGradient(begin: Alignment.bottomRight, stops: [
+              0.1,
+              0.9
+            ], colors: [
+              Colors.blueGrey.withOpacity(.8),
+              Colors.blueGrey.withOpacity(.1)
+            ])),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(40.0),
+                    child: Image.network(widget.image),
+                  )),
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "Title: ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(widget.fullTitle),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Get.height / 25,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Rank: ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(widget.rank),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Get.height / 25,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Rating: ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(widget.rating.toString()),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Get.height / 25,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Crew: ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Container(
+                            width: Get.width / 1.3, child: Text(widget.crew)),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Get.height / 25,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Rating Count: ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text(widget.imDbRatingCount),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Get.height / 25,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ));
   }
 }

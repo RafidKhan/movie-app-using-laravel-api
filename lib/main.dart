@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: HomePage(),
       getPages: AppRoutes.routes,
-      initialRoute: AppRoutes.INITIAL,
+      initialRoute: AppRoutes.HOME,
     );
   }
 }
