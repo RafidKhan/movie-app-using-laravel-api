@@ -55,17 +55,15 @@ class _HomePageState extends State<HomePage> {
                                 GestureDetector(
                                   onTap: () {
                                     showModalBottomSheet(
-                                        isScrollControlled:
-                                        true,
+                                        isScrollControlled: true,
                                         context: context,
                                         builder: (builder) {
                                           return DetailPage(
                                             image: "",
-                                            fullTitle: "",
-                                            rank: "",
+                                            title: "",
                                             rating: "",
-                                            crew: "",
-                                            imDbRatingCount: "",
+                                            year: "",
+                                            desciption: "",
                                           );
                                         });
                                   },
