@@ -15,6 +15,7 @@ class SplashPage extends StatelessWidget {
         backgroundColor: Colors.white,
         styleTextUnderTheLoader: new TextStyle(),
         loaderColor: Colors.red
+
     );
   }
 }
