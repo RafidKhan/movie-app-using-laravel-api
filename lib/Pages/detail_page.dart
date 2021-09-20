@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -54,24 +55,15 @@ class _DetailPageState extends State<DetailPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        Text(
-                          "Title: ",
-                          style: TextStyle(
-                              fontSize: Get.width / 15,
-                              fontWeight: FontWeight.bold),
+                    Container(
+                      width: Get.width / 1.3,
+                      child: Text(
+                        widget.title,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: Get.width / 15,
                         ),
-                        Container(
-                          width: Get.width / 1.3,
-                          child: Text(
-                            widget.title,
-                            style: TextStyle(
-                              fontSize: Get.width / 17,
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                     SizedBox(
                       height: Get.height / 25,
@@ -101,11 +93,11 @@ class _DetailPageState extends State<DetailPage> {
                           ignoreGestures: true,
                           unratedColor: Colors.grey,
                           itemSize: Get.width / 17,
-                          initialRating: double.parse(widget.rating),
+                          initialRating: double.parse(widget.rating)/2.0,
                           minRating: 1,
                           allowHalfRating: true,
                           direction: Axis.horizontal,
-                          itemCount: 10,
+                          itemCount: 5,
                           itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
                           itemBuilder: (context, _) => Icon(
                             Icons.star,
