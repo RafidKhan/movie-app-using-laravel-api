@@ -79,7 +79,7 @@ class _DetailPageState extends State<DetailPage> {
                         Text(
                           widget.rating.toString(),
                           style: TextStyle(
-                            fontSize: Get.width / 17,
+                            fontSize: Get.width / 15,
                           ),
                         ),
                       ],

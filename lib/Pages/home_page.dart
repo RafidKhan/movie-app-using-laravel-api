@@ -108,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                                         height: Get.height / 20,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.all(10.0),
+                                        padding: const EdgeInsets.all(20.0),
                                         child: Column(
                                           children: [
                                             Row(
@@ -127,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                                               ],
                                             ),
                                             SizedBox(
-                                              height: Get.height / 20,
+                                              height: Get.height / 30,
                                             ),
                                             Row(
                                               children: [
@@ -139,18 +139,18 @@ class _HomePageState extends State<HomePage> {
                                                           FontWeight.bold),
                                                 ),
                                                 Container(
-                                                    width: Get.width / 1.7,
+                                                    width: Get.width / 1.9,
                                                     child: Text(
                                                       snapshot.data[i].year,
                                                       style: TextStyle(
                                                         fontSize:
-                                                            Get.width / 20,
+                                                            Get.width / 15,
                                                       ),
                                                     ))
                                               ],
                                             ),
                                             SizedBox(
-                                              height: Get.height / 20,
+                                              height: Get.height / 30,
                                             ),
                                             Row(
                                               children: [
@@ -162,18 +162,18 @@ class _HomePageState extends State<HomePage> {
                                                           FontWeight.bold),
                                                 ),
                                                 Container(
-                                                    width: Get.width / 1.9,
+                                                    width: Get.width / 2,
                                                     child: Text(
                                                       snapshot.data[i].rating,
                                                       style: TextStyle(
                                                         fontSize:
-                                                            Get.width / 20,
+                                                            Get.width / 15,
                                                       ),
                                                     ))
                                               ],
                                             ),
                                             SizedBox(
-                                              height: Get.height / 20,
+                                              height: Get.height / 40,
                                             ),
                                             RatingBar.builder(
                                               ignoreGestures: true,
@@ -192,9 +192,6 @@ class _HomePageState extends State<HomePage> {
                                                 Icons.star,
                                                 color: Colors.amberAccent,
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: Get.height / 20,
                                             ),
                                           ],
                                         ),
