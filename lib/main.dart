@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_app/Pages/home_page.dart';
+import 'package:movie_app/Pages/splash_page.dart';
 import 'package:movie_app/Repository/appRoutes.dart';
 
 void main() {
@@ -15,9 +16,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: "Top Movie List",
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SplashPage(),
       getPages: AppRoutes.routes,
-      initialRoute: AppRoutes.HOME,
+      initialRoute: AppRoutes.INITIAL,
     );
   }
 }

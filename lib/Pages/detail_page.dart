@@ -58,11 +58,19 @@ class _DetailPageState extends State<DetailPage> {
                       children: [
                         Text(
                           "Title: ",
-                          style: TextStyle(fontSize:
-                          Get.width / 15,fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontSize: Get.width / 15,
+                              fontWeight: FontWeight.bold),
                         ),
-                        Text(widget.title, style: TextStyle(fontSize:
-                        Get.width / 15,),),
+                        Container(
+                          width: Get.width / 1.3,
+                          child: Text(
+                            widget.title,
+                            style: TextStyle(
+                              fontSize: Get.width / 17,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -72,11 +80,16 @@ class _DetailPageState extends State<DetailPage> {
                       children: [
                         Text(
                           "Rating: ",
-                          style: TextStyle(fontSize:
-                          Get.width / 15,fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontSize: Get.width / 15,
+                              fontWeight: FontWeight.bold),
                         ),
-                        Text(widget.rating.toString(),style: TextStyle(fontSize:
-                        Get.width / 15,),),
+                        Text(
+                          widget.rating.toString(),
+                          style: TextStyle(
+                            fontSize: Get.width / 17,
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(
@@ -85,29 +98,20 @@ class _DetailPageState extends State<DetailPage> {
                     Container(
                       child: Center(
                         child: RatingBar.builder(
-                          unratedColor:
-                          Colors.grey,
-                          itemSize:
-                          Get.width / 17,
-                          initialRating:
-                          double.parse(widget.rating),
+                          ignoreGestures: true,
+                          unratedColor: Colors.grey,
+                          itemSize: Get.width / 17,
+                          initialRating: double.parse(widget.rating),
                           minRating: 1,
                           allowHalfRating: true,
-                          direction:
-                          Axis.horizontal,
+                          direction: Axis.horizontal,
                           itemCount: 10,
-                          itemPadding: EdgeInsets
-                              .symmetric(
-                              horizontal:
-                              4.0),
-                          itemBuilder:
-                              (context, _) =>
-                              Icon(
-                                Icons.star,
-                                color: Colors.amber,
-                              ),
-                          onRatingUpdate:
-                              (rating) {
+                          itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                          itemBuilder: (context, _) => Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
+                          onRatingUpdate: (rating) {
                             print(rating);
                           },
                         ),
@@ -119,9 +123,10 @@ class _DetailPageState extends State<DetailPage> {
                     Container(
                       width: Get.width,
                       child: Text(
-                        "Description: "+widget.desciption,
-                        style: TextStyle(fontSize:
-                        Get.width / 15,fontWeight: FontWeight.bold),
+                        "Description: " + widget.desciption,
+                        style: TextStyle(
+                            fontSize: Get.width / 15,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     SizedBox(
